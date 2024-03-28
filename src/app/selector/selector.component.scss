@@ -1,0 +1,99 @@
+@import "../../styles/_palette.scss";
+@import "../../styles/_fonts.scss";
+@import "../../styles/variables";
+
+.daysSlider header{
+    display: flex;
+    overflow: hidden;
+    border: 1px solid green;
+}
+
+.dayElement{
+    position: relative;
+    left: -10px;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 45px;
+    box-sizing: border-box;
+    flex-direction: column;
+    border-radius: 3px;
+    border: $border-default;
+    font-family: Lato;
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+
+    section {
+        width: fit-content;
+        place-self: center;
+    }
+
+    .day{
+        font-weight: 800;
+    }
+
+    .month{
+        font-size: .9rem;
+        font-weight: 400;
+    }
+}
+
+.dayElement.unselectedDay{
+    background-color: $white;
+    color: $brand-secondary;
+}
+
+.dayElement.selectedDay{
+    border: $border-default;
+    border-color: $brand-primary;
+    background-color: $white;
+    color: $brand-primary;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.initialSliderMask{
+    mask-image: linear-gradient(to left, black, transparent)
+}
+
+.initialSliderMask{
+    mask-image: linear-gradient(
+        to left,
+        black 95%,
+        transparent
+    );
+}
+
+.finalSliderMask{
+    mask-image: linear-gradient(
+        to right,
+        black 95%,
+        transparent
+    );
+}
+
+.initialSliderMask.finalSliderMask {
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 5% 95%,
+        transparent
+    );
+}
+
+button {
+    border: $border-default;
+    border-color: $gray-2;
+    background-color: $white;
+    border-radius: 3px;
+    font-size: .6rem;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+}

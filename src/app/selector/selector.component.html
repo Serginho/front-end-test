@@ -1,0 +1,17 @@
+<div #daysSlider role="slider" class="daysSlider">
+    <header [style.gap.px]="dayElementsGap + 1">
+        <article class="dayElement"
+            [style.flex-basis.px]="dayElementwidth"
+            *ngFor="let day of displayedDays; trackBy: getDayTracker"
+            [id]="'dayElement' + day.id"
+            [ngClass]="isDaySelected(day) ? 'selectedDay' : 'unselectedDay'"
+            (click)="handleDayClick(day)">
+                <section class="day">{{day.time.toLocaleString("en-US", {day: "numeric"})}}</section>
+                <section class="month">{{day.time.toLocaleDateString("en-US", { month: 'long' }).slice(0,3)}}</section>
+        </article>
+    </header>
+    <footer>
+        <button type="button" class="prevPageButton" (click)="goPrevPage()">Previous</button>
+        <button type="button" class="nextPageButton" (click)="goNextPage()">Next</button>
+    </footer>
+</div>

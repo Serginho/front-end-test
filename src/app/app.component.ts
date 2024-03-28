@@ -25,5 +25,8 @@ export class AppComponent implements OnInit {
     });
   }
 
+  handleSubmit(): void {
+    console.log(this.form);
+  }
 }
 

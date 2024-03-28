@@ -8,9 +8,13 @@
     </p>
   </app-box>
   <app-box class="component">
-    <form [formGroup]="form" novalidate>
+    <form [formGroup]="form" novalidate (ngSubmit)="handleSubmit()">
       <img class="fake-component" src="assets/fake-component.png" />
-      <!--<app-selector></app-selector>-->
+      <app-selector
+        [days]="days"
+        formControlName="selectedDays">
+      </app-selector>
+      <!-- <button type="submit">save</button> -->
     </form>
   </app-box>
   <app-box class="component-description">
